@@ -5,11 +5,11 @@ export const generateEmail = async (content: string, tone: EmailTone): Promise<s
   if (!content.trim()) {
     throw new Error("Content cannot be empty.");
   }
-  if (!import.meta.env.VITE_GEMINI_API_KEY) {
-    throw new Error("API key is not configured. Please set the VITE_GEMINI_API_KEY environment variable.");
+  if (!process.env.API_KEY) {
+    throw new Error("API key is not configured. Please set the API_KEY environment variable.");
   }
 
-  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const model = 'gemini-2.5-flash';
 
   const prompt = `
@@ -42,11 +42,11 @@ export const translateText = async (text: string, language: string): Promise<str
     if (!text.trim()) {
         throw new Error("Text to translate cannot be empty.");
     }
-    if (!import.meta.env.VITE_GEMINI_API_KEY) {
-        throw new Error("API key is not configured. Please set the VITE_GEMINI_API_KEY environment variable.");
+    if (!process.env.API_KEY) {
+        throw new Error("API key is not configured. Please set the API_KEY environment variable.");
     }
 
-    const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const model = 'gemini-2.5-flash';
 
     const prompt = `Translate the following English text to ${language}. Provide only the translation. If the input starts with "Subject: ", the output must also start with "Subject: " followed by the translated subject line.
