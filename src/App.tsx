@@ -346,7 +346,7 @@ const App: React.FC = () => {
         </main>
         
         <footer className="text-center text-slate-500 text-sm py-8 mt-auto">
-            Developed by Teja
+            Developed by Teja Thondrothu
         </footer>
       </div>
     </div>

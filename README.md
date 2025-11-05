@@ -54,7 +54,7 @@ Follow these instructions to set up and run the project locally.
     - Create a new file named `.env` in the root of your project.
     - Add your Gemini API key to this file:
       ```
-      VITE_API_KEY=YOUR_GEMINI_API_KEY
+      VITE_GEMINI_API_KEY=YOUR_GEMINI_API_KEY
       ```
 
 4.  **Start the development server:**
@@ -71,7 +71,7 @@ This project is optimized for deployment on [Vercel](https://vercel.com/).
 2.  **Import the repository** into Vercel. Vercel will automatically detect the Vite configuration.
 3.  **Add the Environment Variable**:
     - In your Vercel project settings, navigate to the "Environment Variables" section.
-    - Add your Gemini API key with the name `VITE_API_KEY`.
+    - Add your Gemini API key with the name `import.meta.env.VITE_GEMINI_API_KEY`.
 4.  **Deploy!** Vercel will build and deploy your application.
 
 ---
