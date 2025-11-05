@@ -40,7 +40,7 @@ ${content}
     contents: prompt,
   });
 
-  return response.text;
+  return response.text ?? "";
 };
 
 export const translateText = async (text: string, language: string): Promise<string> => {
@@ -67,5 +67,5 @@ ${text}
         contents: prompt,
     });
 
-    return response.text;
+    return response.text ?? "";
 };
