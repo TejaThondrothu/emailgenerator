@@ -1,0 +1,5 @@
+{
+  "name": "Content to Email Generator",
+  "description": "An AI-powered application that transforms your notes, articles, or any content into a polished, ready-to-send email. Select the desired tone and let Gemini craft the perfect message for you.",
+  "requestFramePermissions": []
+}
