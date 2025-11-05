@@ -121,7 +121,7 @@ const EmailOutput: React.FC<EmailOutputProps> = ({
             <div className="flex items-center gap-2">
                 <button onClick={handleCopy} disabled={isActionDisabled} className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-200 ${copySuccess ? 'bg-green-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600 disabled:opacity-50'}`} aria-label="Copy email"><span className="sr-only">Copy</span>{copySuccess ? <CheckIcon className="w-5 h-5" /> : <ClipboardIcon className="w-5 h-5" />}</button>
                 <button onClick={onSend} disabled={isActionDisabled} className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-slate-600 disabled:opacity-50 transition-colors duration-200" aria-label="Send email"><span className="sr-only">Send</span><SendIcon className="w-5 h-5" /></button>
-                {typeof navigator !== 'undefined' && navigator.share && <button onClick={onShare} disabled={isActionDisabled} className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-slate-600 disabled:opacity-50 transition-colors duration-200" aria-label="Share email"><span className="sr-only">Share</span><ShareIcon className="w-5 h-5" /></button>}
+                {'share' in navigator && <button onClick={onShare} disabled={isActionDisabled} className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-slate-600 disabled:opacity-50 transition-colors duration-200" aria-label="Share email"><span className="sr-only">Share</span><ShareIcon className="w-5 h-5" /></button>}
             </div>
         </div>
         
