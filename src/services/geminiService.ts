@@ -6,11 +6,11 @@ export const generateEmail = async (content: string, tone: EmailTone): Promise<s
     throw new Error("Content cannot be empty.");
   }
   // FIX: Use `process.env.API_KEY` as per guidelines, which also resolves the TypeScript error.
-  if (!process.env.API_KEY) {
+  if (!import.meta.env.VITE_GEMINI_API_KEY) {
     throw new Error("API key is not configured. Please set the API_KEY environment variable.");
   }
 
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
   const model = 'gemini-2.5-flash';
 
   const prompt = `
@@ -44,11 +44,11 @@ export const translateText = async (text: string, language: string): Promise<str
         throw new Error("Text to translate cannot be empty.");
     }
     // FIX: Use `process.env.API_KEY` as per guidelines, which also resolves the TypeScript error.
-    if (!process.env.API_KEY) {
+    if (!import.meta.env.VITE_GEMINI_API_KEY) {
         throw new Error("API key is not configured. Please set the API_KEY environment variable.");
     }
 
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
     const model = 'gemini-2.5-flash';
 
     const prompt = `Translate the following English text to ${language}. Provide only the translation. If the input starts with "Subject: ", the output must also start with "Subject: " followed by the translated subject line.
