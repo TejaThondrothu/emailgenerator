@@ -1,6 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 import { EmailTone } from '../types';
 
+console.log("VITE_GEMINI_API_KEY:", import.meta.env.VITE_GEMINI_API_KEY);
+
 export const generateEmail = async (content: string, tone: EmailTone): Promise<string> => {
   if (!content.trim()) {
     throw new Error("Content cannot be empty.");
