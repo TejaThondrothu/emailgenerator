@@ -5,10 +5,7 @@ export const generateEmail = async (content: string, tone: EmailTone): Promise<s
   if (!content.trim()) {
     throw new Error("Content cannot be empty.");
   }
-  if (!process.env.API_KEY) {
-    throw new Error("API key is not configured. Please set the API_KEY environment variable.");
-  }
-
+  // FIX: Adhere to guidelines by using process.env.API_KEY directly and removing manual API key validation.
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const model = 'gemini-2.5-flash';
 
@@ -42,10 +39,7 @@ export const translateText = async (text: string, language: string): Promise<str
     if (!text.trim()) {
         throw new Error("Text to translate cannot be empty.");
     }
-    if (!process.env.API_KEY) {
-        throw new Error("API key is not configured. Please set the API_KEY environment variable.");
-    }
-
+    // FIX: Adhere to guidelines by using process.env.API_KEY directly and removing manual API key validation.
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const model = 'gemini-2.5-flash';
 
